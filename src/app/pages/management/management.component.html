@@ -1,0 +1,51 @@
+    <div class="card">
+        <h5 class="card-header">Adicionar/Atualizar Produto</h5>
+        <div class="card-body">
+            <form (ngSubmit)="saveProduct(f)" #f="ngForm" novalidate>
+                <div class="form-group">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" placeholder="Digite o ID" [(ngModel)]="produto.id"
+                        name="id" />
+                </div>
+
+                <div class="form-group">
+                    <label for="nome">Nome do Produto</label>
+                    <input type="text" class="form-control" placeholder="Digite o Nome do Produto" [(ngModel)]="produto.nome"
+                        name="nome" />
+                </div>
+
+                <div class="form-group">
+                    <label for="descricao">Descrição</label>
+                    <input type="text" class="form-control" placeholder="Digite uma descricao" [(ngModel)]="produto.descricao"
+                        name="descricao" />
+                </div>
+
+                <div class="form-group">
+                    <label for="preco">Preço</label>
+                    <input type="number" class="form-control" placeholder="Digite o Preço" [(ngModel)]="produto.preco"
+                        name="preco" />
+                </div>
+
+                <div class="form-group">
+                    <label for="imagem">Imagem</label>
+                    <input type="file" (change)="onFileChanged($event)" class="form-control" placeholder="Selecione uma Imagem" [(ngModel)]="produto.imagem" name="imagem" />
+                </div>
+
+                <div class="form-group">
+                    <label for="categoria_id">ID da Categoria</label>
+                    <input type="number" class="form-control" placeholder="Digite o ID da Categoria" [(ngModel)]="produto.categoria_id"
+                        name="categoria_id" />
+                </div>
+
+                <div class="form-group">
+                    <label for="qtd">Quantidade</label>
+                    <input type="number" class="form-control" placeholder="Digite a Quantidade" [(ngModel)]="produto.qtd"
+                        name="qtd" />
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Save
+                </button>
+            </form>
+        </div>
+    </div>

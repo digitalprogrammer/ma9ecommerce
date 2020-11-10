@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <a [routerLink]="['']" class="">Ma9 Lanches</a>
+    </mat-toolbar-row>  
+    <mat-toolbar-row>
+        <button mat-raised-button color="primary" [routerLink]="['carrinho']" *ngIf="mode">Carrinho</button>
+    </mat-toolbar-row>   
+    <mat-toolbar-row >
+        <button class="login" mat-raised-button color="primary" [routerLink]="['login']" *ngIf="!login">Login</button>
+        <button class="login" mat-raised-button color="primary" [routerLink]="['logup']" *ngIf="!login">Logup</button>
+        <button class="login" mat-raised-button color="primary" [routerLink]="['']" (click)="logout()" *ngIf="login">Logout</button>
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+    <div class="dropdown">
+        <button class="dropbtn">Categorias</button>
+        <div class="dropdown-content">
+            <a class="dropdown-items"  [routerLink]="['bebidas']">Bebidas</a>
+            <hr>
+            <a class="dropdown-items"  [routerLink]="['pizzas']">Pizzas</a>
+            <hr>
+            <a class="dropdown-items"  [routerLink]="['complementos']">Complementos</a>
+        </div>
+    </div>
+    </mat-toolbar-row>   
+</mat-toolbar>

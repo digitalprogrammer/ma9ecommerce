@@ -1,0 +1,6 @@
+<div>
+    <div *ngFor="let produto of produtos" class="left">
+        <app-produto-detail *ngIf="produto.categoria_id == 4" [produto]="produto" [mode]="mode"></app-produto-detail>
+        <br *ngIf="produto.categoria_id == 4">
+    </div>
+</div>

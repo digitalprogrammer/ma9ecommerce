@@ -1,0 +1,22 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>{{produto.nome}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src={{produto.imagem}} width="400" height="400">
+    <mat-card-content *ngIf="mode">
+        <p>
+            {{produto.descricao}}
+        </p>
+    </mat-card-content>
+    <mat-card-title>R$ {{produto.preco}}</mat-card-title>
+
+    <mat-card-actions *ngIf="!carrinho">
+        <button mat-raised-button color="primary" (click)="onSelect(produto)" *ngIf="!mode">Ver</button>
+        <button mat-raised-button color="primary" (click)="onBuy(produto)" *ngIf="mode">Comprar</button>
+    </mat-card-actions>
+    <mat-card-actions *ngIf="carrinho">
+        <button mat-raised-button color="primary" (click)="plusProdut(produto)">+</button>
+        <button mat-raised-button color="primary" (click)="minusProdut(produto)">-</button>
+        <h2>Quantidade: {{produto.qtd}}</h2>
+    </mat-card-actions>
+</mat-card>

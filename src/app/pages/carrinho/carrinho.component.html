@@ -1,0 +1,9 @@
+<div >
+    <div *ngFor="let produto of produtos">
+        <app-produto-detail [produto]="produto" [carrinho]="carrinho"></app-produto-detail>
+        <br>
+    </div>
+    <div >
+        <h2>Total: R$ {{totalToPay}}</h2>
+    </div>
+</div>
